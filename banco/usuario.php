@@ -16,3 +16,5 @@
             return 0; //deu certo
         }
     }
+    
+    function buscaCadastro()
