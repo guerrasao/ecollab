@@ -30,16 +30,13 @@
             <div id="links" class="collapse navbar-collapse justify-content-end">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a href="#menu" class="nav-link" data-scroll> Home </a>
+                  <a href="#menu" class="nav-link" data-scroll> Início </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#empresa" class="nav-link"  data-scroll> Empresa </a>
+                  <a href="#empresa" class="nav-link"  data-scroll> Cadastro </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#servicos" class="nav-link"  data-scroll> Serviços </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#contato" class="nav-link"  data-scroll> Contato </a>
+                  <a href="login.php" class="nav-link"  data-scroll> Login </a>
                 </li>
               </ul>
             </div>      
