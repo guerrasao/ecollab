@@ -1,5 +1,10 @@
 <?php
     include_once 'usuario.php';
+    function login($usuario, $senha){
+        
+    }
+
+
     function cadastra($nome, $sobrenome, $dtNasc, $grauInstrucao, $cidade, $email, $foto, $usuario, $senha, $pontuacao){
         $con=abrirConexao();
         $result = mysqli_query($con,"SELECT * FROM usuario WHERE usuario='$usuario' or email='$email'");
@@ -17,4 +22,26 @@
         }
     }
     
-    function buscaCadastro()
+    function buscaCadastro($id){
+        $con= abrirConexao();
+        $result= mysqli_query($con, "SELECT * FROM usuario WHERE id=$id");
+        if(mysqli_num_rows($result)>0){
+            $dados= mysqli_fetch_array($result);
+            return $dados; //retorna array com todos os dados do usuário. FORMA DE ACESSO:  $dados["NOME DO CAMPO"];
+        }else{
+            return NULL; //caso não encontre
+        }
+    }
+    
+    function cadastraInteresse($ensinar, $aprender, $idConteudo, $idUsuario){ //1 para ensinar 0 para aprender ou ao contrário
+        $con=abrirConexao();
+        $result=mysqli_query($con, "INSERT INTO usuario_conteudo(ensinar, aprender, conteudo_id, usuario_id) VALUES ($ensinar, $aprender, $idConteudo, $idUsuario)");
+        if(mysqli_affected_rows($result)>0){
+            return true; //deu certo
+        }else{
+            return false; //deu errado
+        }
+    }
+    
+    
+
