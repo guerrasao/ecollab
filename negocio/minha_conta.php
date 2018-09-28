@@ -1,8 +1,9 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+session_start();
+$usuario=$_SESSION["usuario"];
+$dados=buscaCadastro($usuario);
+if($dados!=NULL){
+    //Tem informações
+}else{
+    //Erro
+}
