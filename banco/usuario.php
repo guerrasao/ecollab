@@ -1,9 +1,21 @@
 <?php
     include_once 'usuario.php';
     function login($usuario, $senha){
-        
+        $con= abrirConexao();
+        $result= mysqli_query($con,"SELECT senha FROM usuario WHERE usuario='$usuario'");
+        if(mysqli_num_rows($result)>0){
+            $dados= mysqli_fetch_array($result);
+            if($dados["usuario"]===$usuario){
+                if($dados["senha"]===$senha){
+                    return 0; //deu certo;
+                }else{
+                    return 2; //senha errada
+                }
+            }else{
+                return 1; //usuario não existe
+            }
+        }
     }
-
 
     function cadastra($nome, $sobrenome, $dtNasc, $grauInstrucao, $cidade, $email, $foto, $usuario, $senha, $pontuacao){
         $con=abrirConexao();
