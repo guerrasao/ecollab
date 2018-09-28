@@ -1,6 +1,7 @@
 <?php
+    //Cabecalho usuario não logado
     //Pegando o caminho absoluto à esse arquivo.
-    $path = $_SERVER['DOCUMENT_ROOT'] . '/teste/cabecalho/';
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/ecollab/cabecalho/';
     $file = $path . 'cabecalho.php';
     include_once($file);
 ?>
@@ -39,17 +40,12 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </a>  
 </section>
-<div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label">Data de nascimento</label>
-  <div class="col-10">
-    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-  </div>
-</div>
-<section id="empresa">
+
+<section>
     <div class="container">
     <div class="row jumbotron bg-white align-items-center">
         <div class="col-md-6">
-          <h1 class="text-center"> A Empresa </h1>
+          <h1 class="text-center"> projeto </h1>
           <p class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
