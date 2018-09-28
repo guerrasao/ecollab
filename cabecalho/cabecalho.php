@@ -30,10 +30,10 @@
             <div id="links" class="collapse navbar-collapse justify-content-end">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a href="#menu" class="nav-link" data-scroll> Início </a>
+                  <a href="index.php" class="nav-link" data-scroll> Início </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#empresa" class="nav-link"  data-scroll> Cadastro </a>
+                  <a href="cadastro_usuario.php" class="nav-link"  data-scroll> Cadastro </a>
                 </li>
                 <li class="nav-item">
                   <a href="login.php" class="nav-link"  data-scroll> Login </a>
