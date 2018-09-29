@@ -119,6 +119,20 @@
         }
     }
     
+    function temNotificacaoUsuario($usuarioConsultando, $idUsuario){
+        $con=abrirConexao();
+        $result= mysqli_query($con, "SELECT id FROM usuario WHERE usuario='$usuarioConsultando'");
+        $dados= mysqli_fetch_array($result);
+        $idUsuarioConsultando=$dados["id"];
+        $result= mysqli_query($con, "SELECT id FROM notificacao_ensino WHERE usuario_id_aprende=$idUsuarioConsultando and usuario_id_ensina=$idUsuario");
+        $dados= mysqli_fetch_array($result);
+        if(mysqli_num_rows($result)>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     function buscaCategorias(){
         $con=abrirConexao();
         $result=mysqli_query($con,"SELECT * FROM categoria");
