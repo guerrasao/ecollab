@@ -2,31 +2,39 @@
     //Cabecalho usuario não logado
     //Pegando o caminho absoluto à esse arquivo.
     $path = $_SERVER['DOCUMENT_ROOT'] . '/ecollab/cabecalho/';
-    $file = $path . 'cabecalho.php';
+    $file = $path . 'cabecalho_usuario_logado.php';
     include_once($file);
 ?>
 
+<?php
+include("../banco/usuario.php");
+session_start();
+$usuario=$_SESSION["usuario"];
+$dados=buscaCadastro($usuario);
+if($dados!=NULL){
+    
+?>
 <section class="container p-3 col-md-6">
-    <h1 class="p-3">Cadastro de Usuário</h1>
+    <h1 class="p-3">Minha Conta</h1>
     <form class="container " method="post" action="negocio/valida_cadastro.php" enctype="multipart/form-data">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                <input type="text" class="form-control" id="nome" value="<?php echo $dados["nome"] ?>" name="nome" placeholder="Nome">
             </div>
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome">
+                <input type="text" class="form-control" id="sobrenome" value="<?php echo $dados["sobrenome"] ?>" name="sobrenome" placeholder="Sobrenome">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" value="<?php echo $dados["email"] ?>" name="email" placeholder="Email">
             </div>
             <div class="form-group col-md-6">
                 <select id="grau_de_instrucao" name="grau_de_instrucao" class="form-control">
-                    <option value="Grau de Ensino" selected>Grau de Instrução</option>
-                    <option value="Ensino Fundamental">Ensino Fundamental</option>
-                    <option value="Ensino Medio">Ensino Médio</option>
-                    <option value="Superior">Superior</option>
+                    <option value="Grau de Ensino">Grau de Instrução</option>
+                    <option value="Ensino Fundamental" <?php if($dados["grauInstrucao"]==="Ensino Fundamental"){ echo "selected";}?>>Ensino Fundamental</option>
+                    <option value="Ensino Medio" <?php if($dados["grauInstrucao"]==="Ensino Medio"){ echo "selected";}?>>Ensino Médio</option>
+                    <option value="Superior" <?php if($dados["grauInstrucao"]==="Superior"){ echo "selected";}?>>Superior</option>
                 </select>
             </div>
         </div>
@@ -36,7 +44,7 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="date" class="form-control" id="data" name="dtNasc">
+                <input type="date" class="form-control" id="data" name="dtNasc" value="<?php echo $dados["dtNasc"] ?>">
             </div>
             <div class="form-group col-md-6">
                 <select id="genero" name="genero" class="form-control">
@@ -75,6 +83,10 @@
 </section>
 
 <?php
+        //Tem informações
+     }else{
+         //Erro
+     }
     $file = $path . 'rodape.php';
     include_once ($file);
 ?>
