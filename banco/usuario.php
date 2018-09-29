@@ -209,6 +209,11 @@
         }
     }
     
+    function removeNotificacao($idNotificacao){
+        $con=abrirConexao();
+        $result= mysqli_query($con,"DELETE FROM notificacao_ensino WHERE id=$idNotificacao");
+    }
+    
     function cadastraContato($usuario, $idUsuarioSolicita){
         $con=abrirConexao();
         $result= mysqli_query($con, "SELECT id FROM usuario WHERE usuario='$usuario'");
@@ -217,6 +222,9 @@
         $result= mysqli_query($con, "INSERT INTO contato_usuario(usuario_id, usuario_id_contato) VALUES ($idUsuario, $idUsuarioSolicita)");
     }
     
-    function buscaContatos(){
-        
+    function buscaContatos($usuario){
+        $con=abrirConexao();
+        $id=retornaId($usuario);
+        $result= mysqli_query($con, "SELECT u.nome, u.id FROM usuario_contato uc, usuario u WHERE usuario_id='$id' and uc.usuario_id_contato=u.id");
+        return $result;
     }
