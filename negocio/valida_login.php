@@ -9,6 +9,8 @@ if($teste==0){
     echo "Login feito com sucesso!";
     session_start();
     $_SESSION["usuario"]=$login;
+    $redirect = "inicio.php";
+    header("location:$redirect");
 }else if($teste==1){
     echo "Senha errada";
 }else{
