@@ -8,6 +8,7 @@
             $nome=$dados["nome"];
             $idUsuario=$dados["id"];
             //carrega contatos
+            echo "$nome $idUsuario";
         }
     }else{
         echo "Você não possui contatos.";
