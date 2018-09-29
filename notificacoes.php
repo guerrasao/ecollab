@@ -31,9 +31,10 @@
             $aprender= buscaQuerAprender($idContato);
 ?>
     <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/demonstrar_interesse.php">
+        <input type="hidden" name="idUsuarioSolicita" value="<?php echo $idContato ?>">
         <div class="col-md-1">
             <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
-            <input type="hidden" name="idEnsina" value="<?php echo $dados["id"]; ?>">
+            <input type="hidden" name="idNotificacao" value="<?php echo $id; ?>">
         </div>
         <div class="col-md-2">
             <p><?php echo $dados["nome"]; ?></p>
