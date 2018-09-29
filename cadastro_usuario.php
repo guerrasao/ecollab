@@ -36,10 +36,10 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="date" class="form-control" id="data" name="data_de_nascimento">
+                <input type="date" class="form-control" id="data" name="dtNasc">
             </div>
             <div class="form-group col-md-6">
-                <select id="grau_de_instrucao" name="grau_de_instrucao" class="form-control">
+                <select id="grau_de_instrucao" name="grauInstrucao" class="form-control">
                     <option value="Masculino" selected>Masculino</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Outro">Outro</option>
@@ -66,7 +66,7 @@
             </div>
             <div class="form-group col-md-6">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="validatedCustomFile" value="teste">
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" name="foto" value="teste">
                     <label class="custom-file-label" for="validatedCustomFile">Carregar foto do perfil</label>
                 </div>
             </div>
