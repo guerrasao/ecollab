@@ -66,7 +66,7 @@
             </div>
             <div class="form-group col-md-6">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="validatedCustomFile">
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" value="teste">
                     <label class="custom-file-label" for="validatedCustomFile">Carregar foto do perfil</label>
                 </div>
             </div>
