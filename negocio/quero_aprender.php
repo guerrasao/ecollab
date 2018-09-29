@@ -10,14 +10,24 @@ if($ids!=NULL){
         $ensinar= buscaQuerEnsinar($dados["id"]);
         $aprender= buscaQuerAprender($dados["id"]);
         //html - nome;
-        foreach ($ensinar as $ensinar['nome'] => $value) {
-            echo "$value <br>";
-            //html - conteudo que quer ensinar;
+        if($ensinar!=NULL){
+            foreach ($ensinar as $ensinar['nome'] => $value) {
+                echo "$value <br>";
+                //html - conteudo que quer ensinar;
+            }
+        }else{
+            "Não quer ensinar nada.";
         }
-        foreach($aprender as $aprender['nome'] => $value) {
-            echo "$value <br>";
-            //html - conteudo que quer aprender;
+        
+        if($aprender!=NULL){
+            foreach($aprender as $aprender['nome'] => $value) {
+                echo "$value <br>";
+                //html - conteudo que quer aprender;
+            }
+        }else{
+            echo "não quer aprender nada.";
         }
+
     }
 }else{
     echo "nenhum";
