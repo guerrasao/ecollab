@@ -34,9 +34,9 @@
         }
     }
     
-    function buscaCadastro($id){
+    function buscaCadastro($usuario){
         $con= abrirConexao();
-        $result= mysqli_query($con, "SELECT * FROM usuario WHERE id=$id");
+        $result= mysqli_query($con, "SELECT * FROM usuario WHERE usuario='$usuario'");
         if(mysqli_num_rows($result)>0){
             $dados= mysqli_fetch_array($result);
             return $dados; //retorna array com todos os dados do usuário. FORMA DE ACESSO:  $dados["NOME DO CAMPO"];
@@ -53,6 +53,36 @@
         }else{
             return false; //deu errado
         }
+    }
+    
+    function buscaPorInteresseAprender($usuario){ //retorna uusários que ensinam o que se quer aprender
+        $con=abrirConexao();
+        $result=mysqli_query($con, "SELECT uc.* FROM usuario u, usuario_conteudo uc WHERE u.usuario=$usuario and uc.aprender=1");
+        $rows=mysqli_affected_rows($result);
+        $idUsuarios;
+        $indiceIds=0;
+        if($rows>0){
+           $dados=mysqli_fetch_array($result); //CONTEÚDOS QUE ELE QUER APRENDER
+           for($i=0; $i<rows; $i++){
+               $idConteudo=$dados[$i]["conteudo_id"];
+               $result2= mysqli_query($con, "SELECT u.id FROM usuario u, usuario_conteudo uc WHERE uc.ensinar=1 and uc.conteudo_id=$idConteudo");
+               $quantidadeDeIds= mysqli_num_rows($result2);
+               if($quantidadeDeIds>0){
+                   $ids=mysqli_fetch_array($result2);
+                   for($j=0; $j<$quantidadeDeIds; $j++){
+                       $idUsuarios[$indiceIds++]=$ids[$j];//ver se precisa da coluna "id"
+                   }
+               }
+           }
+           
+           return $idUsuarios;
+        }else{
+            return NULL; //deu errado
+        }
+    }
+    
+    function buscaInfoInteresseAprender($id){
+        
     }
     
     
