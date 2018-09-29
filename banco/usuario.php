@@ -56,11 +56,6 @@
     function cadastraInteresse($ensinar, $aprender, $idConteudo, $idUsuario){ //1 para ensinar 0 para aprender ou ao contrário
         $con=abrirConexao();
         $result=mysqli_query($con, "INSERT INTO usuario_conteudo(ensinar, aprender, conteudo_id, usuario_id) VALUES ($ensinar, $aprender, $idConteudo, $idUsuario)");
-        if(mysqli_affected_rows($result)>0){
-            return true; //deu certo
-        }else{
-            return false; //deu errado
-        }
     }
     
     function buscaPorInteresseAprender($usuario){ //retorna uusários que ensinam o que se quer aprender
