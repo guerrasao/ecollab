@@ -15,7 +15,7 @@
         <label for="senha">Senha</label>
         <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a senha">
         </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
+        <button type="submit" name="enviar" class="btn btn-primary">Entrar</button>
     </form>
 </section>
 <?php
