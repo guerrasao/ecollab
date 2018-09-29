@@ -195,12 +195,13 @@
     
     function buscaNomeNotificacao($id){
         $con=abrirConexao();
-        $result= mysqli_query($con, "SELECT u.nome, u.id FROM usuario u, notificacao_ensino ne WHERE ne.id=$id and ne.usuario_id_aprende=u.id");
+        $result= mysqli_query($con, "SELECT u.nome, u.id, u.foto FROM usuario u, notificacao_ensino ne WHERE ne.id=$id and ne.usuario_id_aprende=u.id");
         $informacoes;
         if(mysqli_num_rows($result)>0){
             $dados=mysqli_fetch_array($result);      
             $informacoes["nome"]=$dados["nome"];
             $informacoes["id"]=$dados["id"];
+            $informacoes["foto"]=$dados["foto"];
             return $informacoes;
         }else{
             return NULL;
