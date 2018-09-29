@@ -51,7 +51,7 @@
                   <a href="notificacoes.php" class="nav-link"  data-scroll> Notificações </a>
                 </li>
                 <li class="nav-item">
-                  <a href="notificacoes.php" class="nav-link"  data-scroll> Meus contatos </a>
+                  <a href="meus_contatos.php" class="nav-link"  data-scroll> Meus contatos </a>
                 </li>
                 <li class="nav-item">
                     <a href="negocio/sair.php" class="nav-link"  data-scroll> Sair </a>
