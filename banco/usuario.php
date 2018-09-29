@@ -109,6 +109,14 @@
         }
     }
     
+    function cadastraNotificacao($usuarioAprende, $idEnsina){
+        $con=abrirConexao();
+        $result= mysqli_query($con, "SELECT id FROM usuario WHERE usuario='$usuario'");
+        $dados= mysqli_fetch_array($result);
+        $idEnsina=$dados["id"];
+        $result=mysqli_query($con,"INSERT INTO notificacao_ensino(usuario_id_ensina, usuario_id_aprende) VALUES ($idEnsina, $idAprende)");
+    }
+    
     
     
     
