@@ -45,6 +45,13 @@
         }
     }
     
+    function retornaId($usuario){
+        $result= mysqli_query($con, "SELECT id FROM usuario WHERE usuario='$usuario'");
+        $dados= mysqli_fetch_array($result);
+        $idUsuario=$dados["id"];
+        return $idUsuario;
+    }
+    
     function cadastraInteresse($ensinar, $aprender, $idConteudo, $idUsuario){ //1 para ensinar 0 para aprender ou ao contrário
         $con=abrirConexao();
         $result=mysqli_query($con, "INSERT INTO usuario_conteudo(ensinar, aprender, conteudo_id, usuario_id) VALUES ($ensinar, $aprender, $idConteudo, $idUsuario)");
@@ -200,4 +207,16 @@
         }else{
             return NULL;
         }
+    }
+    
+    function cadastraContato($usuario, $idUsuarioSolicita){
+        $con=abrirConexao();
+        $result= mysqli_query($con, "SELECT id FROM usuario WHERE usuario='$usuario'");
+        $dados= mysqli_fetch_array($result);
+        $idUsuario=$dados["id"];
+        $result= mysqli_query($con, "INSERT INTO contato_usuario(usuario_id, usuario_id_contato) VALUES ($idUsuario, $idUsuarioSolicita)");
+    }
+    
+    function buscaContatos(){
+        
     }

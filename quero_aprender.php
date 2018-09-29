@@ -7,13 +7,14 @@
 ?>
 <section class="container p-3">
     <div class="form-group">
+        <h4 style="text-align: center"><b>Você quer aprender? Cadastre interesses para encontrar pessoas!</b></h4>
         <a class="btn btn-primary col-md-12 p-3 ml-1 mt-4 mb-4" href="cadastra_aprender_area.php">Cadastrar Interesse</a>
     </div>
     <form class="form-row pb-4 align-content-md-between ml-1" action="" method="post">
         <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Interesse">
         <button type="submit" name="submit" class="btn btn-primary  mr-4 ml-4 pr-4 pl-4  col-md-2">Pesquisar</button>
     </form>
-    <h4>Possiveis pessoas para Collab</h4>
+    <h3 style="text-align: center"><b>Pessoas para um Collab:</b></h3>
 
 <?php
     include("banco/usuario.php");
