@@ -111,6 +111,7 @@
             $i=0;
             while($dados= mysqli_fetch_array($result)){
                 $nomes[$i++]=$dados["nome"];
+                echo "AAAAAA $nomes[$i]";
             }
             return $nomes;
         }else{
