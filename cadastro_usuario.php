@@ -22,7 +22,7 @@
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
             </div>
             <div class="form-group col-md-6">
-                <select id="grau_de_instrucao" name="grau_de_instrucao" class="form-control">
+                <select id="grauInstrucao" name="grauInstrucao" class="form-control">
                     <option value="Grau de Ensino" selected>Grau de Instrução</option>
                     <option value="Ensino Fundamental">Ensino Fundamental</option>
                     <option value="Ensino Medio">Ensino Médio</option>
