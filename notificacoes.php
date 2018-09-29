@@ -32,13 +32,15 @@
 ?>
     <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/aceita_collab.php">
         <input type="hidden" name="idUsuarioSolicita" value="<?php echo $idContato ?>">
-        <div class="col-md-1">
-            <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
+        <div class="col-md-2">
+            <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-thumbnail" alt="Foto do usuário">
             <input type="hidden" name="idNotificacao" value="<?php echo $id; ?>">
         </div>
-        <div class="col-md-2">
-            <p><?php echo $dados["nome"]; ?></p>
-        </div>    
+        <div class="col-md-2 row">
+            <p><?php echo $dados["nome"]; echo " ".$dados["sobrenome"]; ?></p>
+            <p><?php echo $dados["cidade"]; ?></p>
+            <p><?php echo $dados["grauInstrucao"]; ?></p>
+        </div>  
         <div class="col-md-3">
             <table class="table bg-white">
                 <thead class="thead-dark">
@@ -86,8 +88,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-3">
-            <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Aceitar collab</button>
+        <div class="col-md-1">
+            <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Aceitar<br> collab</button>
         </div>
     </form>
 <?php

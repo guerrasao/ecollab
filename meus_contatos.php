@@ -28,13 +28,15 @@
 ?>
     <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="chat.php">
         <input type="hidden" name="idUsuarioSolicita" value="<?php echo $idContato ?>">
-        <div class="col-md-1">
+        <div class="col-md-2">
             <input type="hidden" name="foto" value="images_profile/<?php echo $perfil["foto"]; ?>" >
             <input type="hidden" name="nome" value="<?php echo $perfil["nome"]; ?>" >
-            <img src="images_profile/<?php echo $perfil["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
+            <img src="images_profile/<?php echo $perfil["foto"]; ?>" class="img-thumbnail" alt="Foto do usuário">
         </div>
         <div class="col-md-2">
-            <p><?php echo $perfil["nome"]; ?></p>
+            <p><?php echo $perfil["nome"]; echo " ".$perfil["sobrenome"]; ?></p>
+            <p><?php echo $perfil["cidade"]; ?></p>
+            <p><?php echo $perfil["grauInstrucao"]; ?></p>
         </div>    
         <div class="col-md-3">
             <table class="table bg-white">
@@ -83,7 +85,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-1">
             <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Abrir chat</button>
         </div>
     </form>
