@@ -103,6 +103,21 @@
         }
     }
     
+    function buscaQuerAprender($id){
+        $con= abrirConexao();
+        $result= mysqli_query($con, "SELECT c.* FROM usuario_conteudo uc, conteudo c WHERE uc.usuario_id=$id and uc.conteudo_id=c.id and uc.aprender=1");
+        if(mysqli_num_rows($result)>0){
+            $nomes;
+            $i=0;
+            while($dados= mysqli_fetch_array($result)){
+                $nomes[$i++]=$dados["nome"];
+            }
+            return $nomes;
+        }else{
+            return NULL;
+        }
+    }
+    
     function buscaCategorias(){
         $con=abrirConexao();
         $result=mysqli_query($con,"SELECT * FROM categoria");
