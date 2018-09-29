@@ -30,7 +30,7 @@
             $ensinar= buscaQuerEnsinar($idContato);
             $aprender= buscaQuerAprender($idContato);
 ?>
-    <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/demonstrar_interesse.php">
+    <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/aceita_collab.php">
         <input type="hidden" name="idUsuarioSolicita" value="<?php echo $idContato ?>">
         <div class="col-md-1">
             <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
