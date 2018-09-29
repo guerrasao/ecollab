@@ -47,7 +47,7 @@
             //html - nome;
             if($ensinar!=NULL){
                 foreach ($ensinar as $ensinar['nome'] => $value) {
-                    echo "<tr><td>".$value."</td></tr>";
+                    echo "<tr><td>".mb_convert_encoding($value, "UTF-8", "ISO-8859-1")."</td></tr>";
                 }
             }else{
                 echo "<tr><td>Não quer ensinar nada.</td></tr>";
@@ -70,7 +70,7 @@
 <?php
             if($aprender!=NULL){
                 foreach($aprender as $aprender['nome'] => $value) {
-                    echo "<tr><td>".$value."</td></tr>";
+                    echo "<tr><td>".mb_convert_encoding($value, "UTF-8", "ISO-8859-1")."</td></tr>";
                     //html - conteudo que quer aprender;
                 }
             }else{
