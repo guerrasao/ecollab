@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta  http-equiv="Content-Type" content="text/html;">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- CSS próprio -->
@@ -13,6 +14,9 @@
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <!--<script src="../js/popper.js"></script>-->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bibliotecas lou multi select -->
+    <script src="lou_multi_select/js/jquery.multi-select.js"></script>
+    <link rel="stylesheet" href="lou_multi_select/css/multi-select.css">
 </head>
 <body>
     <header>

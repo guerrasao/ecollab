@@ -6,7 +6,7 @@
     include_once($file);
 ?>
 
-<form class="container col-md-9" method="post" action="negocio/cadastro_aprender_area.php">
+<form class="container col-md-9" method="post" action="cadastra_aprender_conteudo.php">
     <h1 class="p-3 mb-4">Quais áreas você tem interesse em aprender?</h1>
 <?php
 include("banco/usuario.php");
@@ -23,7 +23,7 @@ while($dados= mysqli_fetch_array($matrizAreas)){
         echo '
             <div class="card box">
                 <div class="card-body d-flex flex-column">
-                    <input type="checkbox" class="m-1" name="area[]" value="'.$id.'">
+                    <input type="checkbox" class="m-1" name="areas[]" value="'.$id.'">
                     <img class="img-thumbnail m-1" src="img/'.$foto.'" alt="Card image cap">
                     <h5 class="card-title m-1">'.$nome.'</h5>
                 </div>

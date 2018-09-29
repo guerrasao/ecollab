@@ -13,7 +13,9 @@
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <!--<script src="../js/popper.js"></script>-->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--  Biblioteca lou multi select -->
     <script src="lou_multi_select/js/jquery.multi-select.js"></script>
+    <link rel="stylesheet" media="screen" type="text/css" href="lou_multi_select/css/multi-select.css">
 </head>
 <body>
     <header>
@@ -52,7 +54,7 @@
                   <a href="notificacoes.php" class="nav-link"  data-scroll> Meus contatos </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../negocio/sair.php" class="nav-link"  data-scroll> Sair </a>
+                    <a href="negocio/sair.php" class="nav-link"  data-scroll> Sair </a>
                 </li>
               </ul>
             </div>      
