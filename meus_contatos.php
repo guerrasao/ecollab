@@ -82,7 +82,7 @@
             </table>
         </div>
         <div class="col-md-3">
-            <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Abrir chat</button>
+            <a class="btn btn-primary pr-4 pl-4" href="chat.php">Abrir chat</a>
         </div>
     </form>
 <?php

@@ -7,3 +7,4 @@
     cadastraContato($usuario, $idUsuarioSolicita);
     removeNotificacao($idNotificacao);
 
+    header("location:../meus_contatos.php");
