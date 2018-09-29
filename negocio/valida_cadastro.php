@@ -8,6 +8,7 @@ $cidade=$_POST["cidade"];
 $email=$_POST["email"];
 $user=$_POST["usuario"];
 $senha=$_POST["senha"];
+$genero=$_POST["genero"];
 
 $extensao = pathinfo($_FILES['foto']['name']);
 $extensao = ".".$extensao['extension'];
@@ -57,7 +58,7 @@ if ($uploadOk == 0) {
 }
 
 include_once("../banco/usuario.php");
-$teste=cadastra($nome, $sobrenome, $dtnasc, $grauinst, $cidade, $email, $imagem, $user, $senha,0);
+$teste=cadastra($nome, $sobrenome, $dtnasc, $grauinst, $cidade, $email, $imagem, $user, $senha,0, $genero);
         
 if($teste==1){
     echo "Usuario já existe!";
