@@ -5,8 +5,8 @@
     $file = $path . 'cabecalho.php';
     include_once($file);
 ?>
-<section class="container p-3">
-    <form action="negocio/valida_login.php" method="post">
+<section class="container p-3 col-md-3 mt-5 mb-5">
+    <form class="" action="negocio/valida_login.php" method="post">
         <div class="form-group">
         <label for="usuario">Login</label>
         <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite o usuário">

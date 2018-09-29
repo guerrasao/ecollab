@@ -58,6 +58,9 @@
                     <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
                 </div>
             </div>
+            <div class="form-group col-md-6">
+                <img class="img-thumbnail" width="150px" src="img/user.png">
+            </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">

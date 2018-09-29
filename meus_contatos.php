@@ -10,7 +10,7 @@
         <h4 style="text-align: center"><b>Meus Contatos</b></h4>
     </div>
     <form class="form-row pb-4 align-content-md-between ml-1" action="negocio/aceita_collab.php" method="post">
-        <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Interesse">
+        <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Contato">
         <button type="submit" name="submit" class="btn btn-primary  mr-4 ml-4 pr-4 pl-4  col-md-2">Pesquisar</button>
     </form>
 
@@ -19,7 +19,7 @@
     session_start();
     $usuario=$_SESSION["usuario"];
     $contatos= buscaContatos($usuario);
-    if($contatos!=NULL){
+    if(mysqli_num_rows($contatos)>0){
         while ($dados= mysqli_fetch_array($contatos)){
             $idContato=$dados["id"];
             $perfil= buscaInfoUsuario($idContato);
@@ -90,7 +90,7 @@
         }
     }else{
         echo '<div class="alert alert-danger" role="alert">
-                Nenhuma notificação encontrada!
+                Nenhum contato encontrado!
               </div>';
     }
 ?>
