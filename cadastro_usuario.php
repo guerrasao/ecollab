@@ -8,7 +8,7 @@
 
 <section class="container p-3 col-md-6">
     <h1 class="p-3">Cadastro de Usuário</h1>
-    <form class="container " post="negocio/valida_usuario.php" enctype="multipart/form-data">
+    <form class="container " method="post" action="negocio/valida_usuario.php" enctype="multipart/form-data">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
