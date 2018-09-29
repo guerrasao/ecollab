@@ -4,6 +4,7 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/ecollab/cabecalho/';
     $file = $path . 'cabecalho_usuario_logado.php';
     include_once($file);  
+    header ('Content-type: text/html; charset=ISO-8859-1');
     
 ?>
 <form class="container col-md-9">

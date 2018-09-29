@@ -13,6 +13,7 @@
         <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Interesse">
         <button type="submit" name="submit" class="btn btn-primary  mr-4 ml-4 pr-4 pl-4  col-md-2">Pesquisar</button>
     </form>
+    <h4>Possiveis pessoas para Collab</h4>
 
 <?php
     include("banco/usuario.php");
