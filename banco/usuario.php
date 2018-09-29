@@ -138,6 +138,12 @@
         $result=mysqli_query($con,"SELECT * FROM categoria");
         return $result;
     }
+    
+    function buscaInfoCategoria($idCategoria){
+        $con=abrirConexao();
+        $result=mysqli_query($con,"SELECT * FROM categoria WHERE id=$idCategoria");
+        return $result;
+    }
 
     function buscaConteudos($idCategoria){
         $con=abrirConexao();
