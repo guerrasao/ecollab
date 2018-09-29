@@ -15,7 +15,7 @@
     </form>
 
 <?php
-    include("../banco/usuario.php");
+    include("banco/usuario.php");
     session_start();
     $usuario=$_SESSION["usuario"];
     $ids=buscaPorInteresseAprender($usuario);
