@@ -74,15 +74,21 @@
                    }
                }
            }
-           
-           return $idUsuarios;
+           return $idUsuarios; //Ids de usuários para aparecer na lista
         }else{
             return NULL; //deu errado
         }
     }
     
     function buscaInfoInteresseAprender($id){
-        
+        $con=abrirConexao();
+        $result=mysqli_query($con,"SELECT u.*, uc.* FROM usuario u, usuario_conteudo uc WHERE u.id=$id");
+        if(mysqli_num_rows($result)>0){
+            $dados= mysqli_fetch_array($result);
+            return $dados;
+        }else{
+            return NULL;
+        }
     }
     
     
