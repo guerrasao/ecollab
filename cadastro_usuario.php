@@ -61,12 +61,12 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <button type="submit" name="enviar" class="btn btn-primary pr-4 pl-4">Cadastrar</button>
+                <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Cadastrar</button>
                 <button type="reset" name="reset" class="btn btn-primary pr-5 pl-5">Limpar</button>
             </div>
             <div class="form-group col-md-6">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="validatedCustomFile" name="foto" value="teste">
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" name="foto" >
                     <label class="custom-file-label" for="validatedCustomFile">Carregar foto do perfil</label>
                 </div>
             </div>
