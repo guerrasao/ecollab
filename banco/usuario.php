@@ -143,8 +143,7 @@
         $con=abrirConexao();
         $result=mysqli_query($con,"SELECT * FROM conteudo WHERE categoria_id=$id");
         if(mysqli_num_rows($result)>0){
-            $dados= mysqli_fetch_array($result);
-            return $dados;
+            return $result;
         }else{
             return NULL;
         }
