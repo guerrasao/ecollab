@@ -7,14 +7,12 @@ $ids=buscaPorInteresseAprender($usuario);
 if($ids!=NULL){
     for($i=0;$i<count($ids);$i++){
         $dados= buscaInfoUsuario($ids[$i]);
-        echo "-----------".$dados['nome']."---------";
         $ensinar= buscaQuerEnsinar($dados["id"]);
-
+        //html - nome;
         foreach ($ensinar as $ensinar['nome'] => $value) {
             echo "$value <br>";
+            //html - conteudo;
         }
-        echo "<br> <br>";
-
     }
 }else{
     echo "nenhum";
