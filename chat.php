@@ -6,7 +6,22 @@
     include_once($file);
 ?>
 
-
+<section class="container">
+    <h1 class="mb-4 ml-3">Chat</h1>
+    <div class="d-flex">
+        <div class="col-md-2 ">
+            <img class="" height="150px" src="images_profile/a.jpg">
+            <h5 class="mt-2">Nome contato</h5>
+        </div>
+        <div class="col-md-10 ">
+            <textarea class="col-md-12 form-control" rows="15" placeholder="Mensagens"></textarea>
+            <div class="d-flex mt-3 mb-4">
+                <input type="text" class="form-control " id="menagem" name="mensagem" placeholder="Mensagem">
+                <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4 ml-3">Enviar</button>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php
     $file = $path . 'rodape.php';

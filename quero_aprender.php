@@ -11,7 +11,7 @@
         <a class="btn btn-primary col-md-12 p-3 ml-1 mt-4 mb-4" href="cadastra_aprender_area.php">Cadastrar Interesse</a>
     </div>
     <form class="form-row pb-4 align-content-md-between ml-1" action="" method="post">
-        <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Interesse">
+        <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Usuário">
         <button type="submit" name="submit" class="btn btn-primary  mr-4 ml-4 pr-4 pl-4  col-md-2">Pesquisar</button>
     </form>
     <h3 style="text-align: center"><b>Pessoas para um Collab:</b></h3>
