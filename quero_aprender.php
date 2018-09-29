@@ -76,12 +76,18 @@
             }else{
                 echo "<tr><td>Não quer aprender nada.</td></tr>";
             }
+            $jaDemonstrou;
+            if(temNotificacaoUsuario($_SESSION['usuario'], $ids[$i])){
+                $jaDemonstrou="Retirar interesse";
+            }else{
+                $jaDemonstrou="Demonstrar interesse";
+            }
 ?>
                 </tbody>
             </table>
         </div>
         <div class="col-md-3">
-            <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Demonstrar Interesse</button>
+            <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4"><?php echo $jaDemonstrou?></button>
         </div>
     </form>
 <?php
