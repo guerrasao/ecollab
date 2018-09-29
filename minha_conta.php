@@ -67,7 +67,7 @@ if($dados!=NULL){
                 </div>
             </div>
             <div class="form-group col-md-6">
-                <img class="img-fluid" src="images_profile/<?php echo $dados["foto"];?>">
+                <img class="img-fluid" width="150px" src="images_profile/<?php echo $dados["foto"];?>">
             </div>
         </div>
         <div class="form-row">
