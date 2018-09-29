@@ -11,7 +11,7 @@ $user=$_POST["usuario"];
 $senha=$_POST["senha"];
 
 include("banco/usuario.php");
-$teste=cadastra(nome, sobrenome, dtnasc, grauinst, cidade, email, foto, user, senha);
+$teste=cadastra($nome, $sobrenome, $dtnasc, $grauinst, $cidade, $email, $foto, $user, $senha);
 if($teste==1){
     echo "Usuario já existe!";
 }else if($teste==2){
