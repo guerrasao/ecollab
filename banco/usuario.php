@@ -224,6 +224,8 @@
     function buscaContatos($usuario){
         $con=abrirConexao();
         $id=retornaId($usuario);
-        $result= mysqli_query($con, "SELECT u.nome, u.id FROM usuario_contato uc, usuario u WHERE usuario_id='$id' and uc.usuario_id_contato=u.id");
+        echo "$id";
+        $result= mysqli_query($con, "SELECT u.nome, u.id FROM contato_usuario uc, usuario u WHERE uc.usuario_id_contato=u.id and uc.usuario_id=$id");
+        
         return $result;
     }
