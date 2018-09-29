@@ -142,7 +142,8 @@
     function buscaInfoCategoria($idCategoria){
         $con=abrirConexao();
         $result=mysqli_query($con,"SELECT * FROM categoria WHERE id=$idCategoria");
-        return $result;
+        $dados= mysqli_fetch_array($result);
+        return $dados["nome"];
     }
 
     function buscaConteudos($idCategoria){
