@@ -2,7 +2,7 @@
     include_once 'conexao.php';
     function login($usuario, $senha){
         $con= abrirConexao();
-        $result= mysqli_query($con,"SELECT senha FROM usuario WHERE usuario='$usuario'");
+        $result= mysqli_query($con,"SELECT * FROM usuario WHERE usuario='$usuario'");
         if(mysqli_num_rows($result)>0){
             $dados= mysqli_fetch_array($result);
             if($dados["usuario"]===$usuario){
@@ -57,32 +57,29 @@
     
     function buscaPorInteresseAprender($usuario){ //retorna uusários que ensinam o que se quer aprender
         $con=abrirConexao();
-        $result=mysqli_query($con, "SELECT uc.* FROM usuario u, usuario_conteudo uc WHERE u.usuario=$usuario and uc.aprender=1");
-        $rows=mysqli_affected_rows($result);
+        $result=mysqli_query($con, "SELECT uc.* FROM usuario u, usuario_conteudo uc WHERE u.usuario='$usuario' and uc.aprender=1");
+        $rows=mysqli_num_rows($result);
         $idUsuarios;
         $indiceIds=0;
         if($rows>0){
-           $dados=mysqli_fetch_array($result); //CONTEÚDOS QUE ELE QUER APRENDER
-           for($i=0; $i<rows; $i++){
-               $idConteudo=$dados[$i]["conteudo_id"];
-               $result2= mysqli_query($con, "SELECT u.id FROM usuario u, usuario_conteudo uc WHERE uc.ensinar=1 and uc.conteudo_id=$idConteudo");
+           while($dados=mysqli_fetch_array($result)){ //CONTEÚDOS QUE ELE QUER APRENDER
+               $idConteudo=$dados["conteudo_id"];
+               $result2= mysqli_query($con, "SELECT uc.usuario_id FROM usuario_conteudo uc WHERE uc.ensinar=1 and uc.conteudo_id=$idConteudo");
                $quantidadeDeIds= mysqli_num_rows($result2);
                if($quantidadeDeIds>0){
-                   $ids=mysqli_fetch_array($result2);
-                   for($j=0; $j<$quantidadeDeIds; $j++){
-                       $idUsuarios[$indiceIds++]=$ids[$j];//ver se precisa da coluna "id"
-                   }
-               }
+                   while($ids=mysqli_fetch_array($result2)){
+                        $idUsuarios[$indiceIds++]=$ids["usuario_id"];//ver se precisa da coluna "id"
+                    }
+                }
            }
            return $idUsuarios; //Ids de usuários para aparecer na lista
-        }else{
-            return NULL; //deu errado
+           
         }
     }
     
     function buscaInfoInteresseAprender($id){
         $con=abrirConexao();
-        $result=mysqli_query($con,"SELECT u.*, uc.* FROM usuario u, usuario_conteudo uc WHERE u.id=$id");
+        $result=mysqli_query($con,"SELECT u.*, uc.* FROM usuario u, usuario_conteudo uc, conteudo c WHERE u.id=$id");
         if(mysqli_num_rows($result)>0){
             $dados= mysqli_fetch_array($result);
             return $dados;
@@ -101,6 +98,17 @@
     function buscaConteudos(){
         $con=abrirConexao();
         $result=mysqli_query($con,"SELECT * FROM conteudo WHERE categoria_id=$id");
+        if(mysqli_num_rows($result)>0){
+            $dados= mysqli_fetch_array($result);
+            return $dados;
+        }else{
+            return NULL;
+        }
+    }
+    
+     function buscaConteudosId($id){
+        $con=abrirConexao();
+        $result=mysqli_query($con,"SELECT * FROM conteudo WHERE id=$id");
         if(mysqli_num_rows($result)>0){
             $dados= mysqli_fetch_array($result);
             return $dados;

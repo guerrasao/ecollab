@@ -12,7 +12,7 @@ if($teste==0){
     $redirect = "../inicio.php";
     header("location:$redirect");
 }else if($teste==1){
-    echo "Senha errada";
+    echo "Usuario não existe";
 }else{
-    echo "Usuario não existe"; 
+    echo "Senha incorreta"; 
 }
