@@ -7,7 +7,7 @@
     header ('Content-type: text/html; charset=UTF-8');
     
 ?>
-<form class="container col-md-8" method="post" action="">
+<form class="container col-md-8" method="post" action="negocio/cadastra_interesse_aprender.php">
     <h1 class="p-3 mb-4">Quais áreas você tem interesse em aprender?</h1>
 <?php
     include_once 'banco/usuario.php';
