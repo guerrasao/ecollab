@@ -25,7 +25,7 @@ while($dados= mysqli_fetch_array($matrizAreas)){
                 <div class="card-body d-flex flex-column">
                     <input type="checkbox" class="m-1" name="areas[]" value="'.$id.'">
                     <img class="img-thumbnail m-1" src="img/'.$foto.'" alt="Card image cap">
-                    <h5 class="card-title m-1">'.$nome.'</h5>
+                    <h5 class="card-title m-1">'.mb_convert_encoding($nome, "UTF-8", "ISO-8859-1").'</h5>
                 </div>
             </div>
         ';
