@@ -9,7 +9,7 @@
    return $con;
 }
 
- function FecharConexao($con){
+ function fecharConexao($con){
   mysqli_close($con);
 }
 ?>
