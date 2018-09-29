@@ -9,7 +9,7 @@
     <div class="form-group">
         <h4 style="text-align: center"><b>Meus Contatos</b></h4>
     </div>
-    <form class="form-row pb-4 align-content-md-between ml-1" action="negocio/aceita_collab.php" method="post">
+    <form class="form-row pb-4 align-content-md-between ml-1" action="chat.php" method="post">
         <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Interesse">
         <button type="submit" name="submit" class="btn btn-primary  mr-4 ml-4 pr-4 pl-4  col-md-2">Pesquisar</button>
     </form>
@@ -26,9 +26,11 @@
             $ensinar= buscaQuerEnsinar($idContato);
             $aprender= buscaQuerAprender($idContato);
 ?>
-    <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/aceita_collab.php">
+    <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="chat.php">
         <input type="hidden" name="idUsuarioSolicita" value="<?php echo $idContato ?>">
         <div class="col-md-1">
+            <input type="hidden" name="foto" value="images_profile/<?php echo $perfil["foto"]; ?>" >
+            <input type="hidden" name="nome" value="<?php echo $perfil["nome"]; ?>" >
             <img src="images_profile/<?php echo $perfil["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
         </div>
         <div class="col-md-2">

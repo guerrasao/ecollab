@@ -4,6 +4,7 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/ecollab/cabecalho/';
     $file = $path . 'cabecalho.php';
     include_once($file);
+
 ?>
 <section class="container p-3">
     <form action="negocio/valida_login.php" method="post">

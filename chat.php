@@ -4,14 +4,17 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/ecollab/cabecalho/';
     $file = $path . 'cabecalho_usuario_logado.php';
     include_once($file);
+    session_start();
+    $foto=$_POST["foto"];
+  
 ?>
 
 <section class="container">
     <h1 class="mb-4 ml-3">Chat</h1>
     <div class="d-flex">
         <div class="col-md-2 ">
-            <img class="" height="150px" src="images_profile/a.jpg">
-            <h5 class="mt-2">Nome contato</h5>
+            <img class="" height="150px" src="<?php echo $foto;?>">
+            <h5 class="mt-2"><?php echo $_POST["nome"];?></h5>
         </div>
         <div class="col-md-10 ">
             <textarea class="col-md-12 form-control" rows="15" placeholder="Mensagens"></textarea>

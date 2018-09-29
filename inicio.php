@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/banner1.jpg" alt="Banner 3" class="img-fluid">
+        <img src="img/banner3.jpg" alt="Banner 3" class="img-fluid">
         <div class="carousel-caption d-none d-md-block">
 
         </div>
