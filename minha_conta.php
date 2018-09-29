@@ -12,7 +12,7 @@ session_start();
 $usuario=$_SESSION["usuario"];
 $dados=buscaCadastro($usuario);
 if($dados!=NULL){
-    
+    echo "aqui";
 ?>
 <section class="container p-3 col-md-6">
     <h1 class="p-3">Minha Conta</h1>
