@@ -14,8 +14,8 @@
         cadastraInteresse(0, 1, $value, $idUsuario);
     }
 
-        echo '<div class="container"><div class="alert alert-sucess" role="alert">
-                    Counteudos cadastrados com sucesso!
+        echo '<div class="container"><div class="alert alert-success" role="alert">
+                    Conteúdos cadastrados com sucesso!
                   </div></div>';
 
 
