@@ -33,12 +33,11 @@
         <div class="col-md-2">
             <p><?php echo $dados["nome"]; ?></p>
         </div>    
-        <div class="col-md-6">
+        <div class="col-md-3">
             <table class="table bg-white">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Pode Ensinar</th>
-                        <th scope="col">Pode Aprender</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,13 +46,25 @@
             //html - nome;
             if($ensinar!=NULL){
                 foreach ($ensinar as $ensinar['nome'] => $value) {
-                    echo "<td>".$value."</td>";
+                    echo "<td>".htmlspecialchars($value)."</td>";
                 }
             }else{
                 echo "<td>Não quer ensinar nada.</td>";
             }
+            
 ?>
                     </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <table class="table bg-white">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Quer Aprender</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
 <?php
             if($aprender!=NULL){
@@ -66,7 +77,7 @@
             }
 ?>
                     </tr>
-              </tbody>
+                </tbody>
             </table>
         </div>
         <div class="col-md-3">
