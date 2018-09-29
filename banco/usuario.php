@@ -156,8 +156,29 @@
         $result=mysqli_query($con,"INSERT INTO notificacao_ensino(usuario_id_ensina, usuario_id_aprende) VALUES ($idEnsina, $idAprende)");
     }
     
+    function buscaIdNotificacoes($usuario){
+        $con=abrirConexao();
+        $result= mysqli_query($con, "SELECT ne.id FROM usuario u, notificacao_ensino ne WHERE u.usuario='$usuario' and ne.usuario_id_ensina=u.id");
+        $notificacoes;
+        $i=0;
+        if(mysqli_num_rows($result)>0){
+            while($dados=mysqli_fetch_array($result)){        
+                $notificacoes[$i++]=$dados["id"];
+            }
+            return $notificacoes;
+        }else{
+            return NULL;
+        }
+    }
     
-    
-    
-    
-
+    function buscaNomeNotificacao($id){
+        $con=abrirConexao();
+        $result= mysqli_query($con, "SELECT u.nome FROM usuario u, notificacao_ensino ne WHERE ne.id=$id and ne.usuario_id=u.id");
+        if(mysqli_num_rows($result)>0){
+            $dados=mysqli_fetch_array($result);      
+            $nome=$dados["nome"];
+            return $nome;
+        }else{
+            return NULL;
+        }
+    }
