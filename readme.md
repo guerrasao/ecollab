@@ -1,5 +1,12 @@
 # Projeto e-collab
 
+## Descrição
+
+O objetivo principal do sistema é conectar pessoas que possuem interesses de aprender e ensinar.
+
+O foco é desenvolver um ambiente de aprendizagem colaborativa, onde a moeda de troca é o conhecimento, realizando assim uma democratização do conhecimento entre os usuários. Outro objetivo importante é a união de pessoas que possuem os mesmo interesses de aprendizagem, auxiliando no processo de formação de grupos de estudos e de pesquisa, podendo unir não somente no âmbito virtual, mas como pessoalmente.
+
+
 ## Softwares e Tecnologias Utilizados
 
 ```
