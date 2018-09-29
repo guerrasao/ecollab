@@ -56,8 +56,8 @@ if ($uploadOk == 0) {
     }
 }
 
-include("../banco/usuario.php");
-$teste=cadastra($nome, $sobrenome, $dtnasc, $grauinst, $cidade, $email, $imagem, $user, $senha);
+include_once("../banco/usuario.php");
+$teste=cadastra($nome, $sobrenome, $dtnasc, $grauinst, $cidade, $email, $imagem, $user, $senha,0);
 if($teste==1){
     echo "Usuario já existe!";
 }else if($teste==2){
