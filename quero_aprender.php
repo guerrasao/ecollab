@@ -33,8 +33,10 @@
             <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-thumbnail" alt="Foto do usuário">
             <input type="hidden" name="idEnsina" value="<?php echo $dados["id"]; ?>">
         </div>
-        <div class="col-md-1">
-            <p><?php echo $dados["nome"]; ?></p>
+        <div class="col-md-2 row">
+            <p><?php echo $dados["nome"]; echo " ".$dados["sobrenome"]; ?></p>
+            <p><?php echo $dados["cidade"]; ?></p>
+            <p><?php echo $dados["grauInstrucao"]; ?></p>
         </div>    
         <div class="col-md-3">
             <table class="table bg-white">
@@ -80,15 +82,15 @@
             }
             $jaDemonstrou;
             if(temNotificacaoUsuario($_SESSION['usuario'], $ids[$i])){
-                $jaDemonstrou="Retirar interesse";
+                $jaDemonstrou="Retirar<br> interesse";
             }else{
-                $jaDemonstrou="Demonstrar interesse";
+                $jaDemonstrou="Demonstrar<br> interesse";
             }
 ?>
                 </tbody>
             </table>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
             <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4"><?php echo $jaDemonstrou?></button>
         </div>
     </form>
