@@ -6,7 +6,7 @@
     include_once($file);
 ?>
 <section class="container p-3">
-    <form action="negocio/valida-login.php" method="post">
+    <form action="negocio/valida_login.php" method="post">
         <div class="form-group">
         <label for="usuario">Login</label>
         <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite o usuário">
