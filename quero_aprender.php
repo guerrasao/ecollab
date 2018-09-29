@@ -47,7 +47,7 @@
             //html - nome;
             if($ensinar!=NULL){
                 foreach ($ensinar as $ensinar['nome'] => $value) {
-                    echo "<td>".$value."</td>";
+                    echo "<td>".htmlspecialchars($value)."</td>";
                 }
             }else{
                 echo "<td>Não quer ensinar nada.</td>";
