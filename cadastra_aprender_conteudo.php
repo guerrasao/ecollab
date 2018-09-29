@@ -11,25 +11,32 @@
     <h1 class="p-3 mb-4">Quais áreas você tem interesse em aprender?</h1>
 <?php
     include_once 'banco/usuario.php';
-    $categorias = $_POST["areas"];
+    $categorias = $_POST['areas'];
     foreach ($categorias as $key => $value) {
         //nome categoria
         $nomeCategoria = buscaInfoCategoria($value);
         $nomeCategoria = mb_convert_encoding($nomeCategoria, "UTF-8", "ISO-8859-1");
         echo '<div class="container"><h4 class="mt-3">'.$nomeCategoria.'</h4>';
-        echo '<select multiple="multiple" id="conteudos" name="conteudos[]">';
+        
         
         $conteudo = buscaConteudos($value);
-        while($dados= mysqli_fetch_array($conteudo)){
-            $id=$dados['id'];
-            $nome=$dados['nome'];
-            echo '<option value="'.$id.'">'.mb_convert_encoding($nome, "UTF-8", "ISO-8859-1").'</option>';
+        if($conteudo == NULL){
+            echo '<div class="alert alert-secoundary" role="alert">
+                    Nenhum conteúto encontrado para esta categoria!
+                  </div></div>';
+        }else{
+            echo '<select multiple="multiple" id="conteudos" name="conteudos[]">';
+            while($dados= mysqli_fetch_array($conteudo)){
+                $id=$dados['id'];
+                $nome=$dados['nome'];
+                echo '<option value="'.$id.'">'.mb_convert_encoding($nome, "UTF-8", "ISO-8859-1").'</option>';
+            }
+            echo '</select></div>';
+            echo "<script type='text/javascript'>";
+            echo '$(\'#conteudos\').multiSelect();
+                </script> 
+            ';
         }
-        echo '</select></div>';
-        echo "<script type='text/javascript'>";
-        echo '$(\'#conteudos\').multiSelect();
-            </script> 
-        ';
     }
     
 ?>
