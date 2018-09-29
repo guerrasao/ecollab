@@ -10,25 +10,22 @@
     <!-- imagens -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="img/banner7.jpg" alt="Banner 1" class="img-fluid">
+        <img src="img/banner1.jpg" alt="Banner 1" class="img-fluid">
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="text-danger font-weight-bold">Título Banner 1</h1>
-          <h4 class="text-white font-weight-bold"> Texto Banner 1 </h4>
+
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/banner4.jpg" alt="Banner 2" class="img-fluid">
+        <img src="img/banner2.jpg" alt="Banner 2" class="img-fluid">
         <!-- exibe sempre, nos outros apenas quando md-->
         <div class="carousel-caption d-md-block">
-          <h1 class="text-danger font-weight-bold">Título Banner 2</h1>
-          <h4 class="text-white font-weight-bold"> Texto Banner 2 </h4>
+
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/banner6.jpg" alt="Banner 3" class="img-fluid">
+        <img src="img/banner1.jpg" alt="Banner 3" class="img-fluid">
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="text-danger font-weight-bold">Título Banner 3</h1>
-          <p class="text-info font-weight-bold"> Texto Banner 3 </p>
+
         </div>
       </div>
     </div>  
