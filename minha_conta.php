@@ -11,7 +11,7 @@ include("banco/usuario.php");
 session_start();
 $usuario=$_SESSION["usuario"];
 $dados=buscaCadastro($usuario);
-echo "aqui ".$dados["nome"];
+echo "aqui usuario=".$usuario.", dados".$dados["nome"];
 if($dados!=NULL){
     
 ?>
