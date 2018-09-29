@@ -4,7 +4,7 @@ $login=$_POST["usuario"];
 $senha=$_POST["senha"];
 
 include("banco/usuario.php");
-$teste=login(login, senha);
+$teste=login($login, $senha);
 if($teste==0){
     echo "Login feito com sucesso!";
     session_start();

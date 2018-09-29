@@ -1,8 +1,12 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+include("banco/usuario.php");
+session_start();
+$usuario=$_SESSION["usuario"];
+$ids=buscaPorInteresseAprender($usuario);
+if($ids!=NULL){
+    for($i=0;$i<count($tam);$i++){
+        $dados=buscaInfoInteresseAprender($id[$i]);  
+    }
+}else{
+    //Nenhum elemento similar;
+}
