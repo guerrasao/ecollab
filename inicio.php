@@ -44,17 +44,29 @@
 <section>
     <div class="container">
     <div class="row jumbotron bg-white align-items-center">
-        <div class="col-md-6">
-          <h1 class="text-center"> projeto </h1>
-          <p class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        <div class="col-md-7 mr-5">
+            <h1 class="text-center"> O QUE É O <b>E-COLLAB</b>? </h1>
+          <p class="text-justify">O objetivo principal do sistema é conectar pessoas que possuem interesses de aprender e ensinar.
+              O foco é desenvolver um ambiente de aprendizagem colaborativa, onde a moeda de troca é o conhecimento, realizando assim uma democratização do conhecimento entre os usuários. Outro objetivo importante é a união de pessoas que possuem os mesmo interesses de aprendizagem, auxiliando no processo de formação de grupos de estudos e de pesquisa, podendo unir não somente no âmbito virtual, mas como pessoalmente.
+ </p>
         </div>
-        <div class="col-md-6">
-          <img src="img/note.jpg" class="img-fluid rounded">
+        <div class="col-md-4">
+            <img src="img/logotransparente.png" class="img-fluid rounded" >
+        </div>
+      </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+    <div class="row jumbotron bg-white align-items-center">
+        <div class="col-md-7 mr-5">
+            <h1 class="text-center"> QUEM DESENVOLVEU? </h1>
+          <p class="text-justify">O sistema foi desenvolvido por Daniel Brenner Seitenfus, Elivelton Capra e Patrick Guerra, durante o evento Hackathon promovido pelo IF Farroupilha - Campus Frederico Westphalen.
+ </p>
+        </div>
+        <div class="col-md-4">
+            <img src="img/desenvolvedores.jpg" class="img-fluid rounded" >
         </div>
       </div>
     </div>
