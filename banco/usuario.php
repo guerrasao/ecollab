@@ -77,12 +77,27 @@
         }
     }
     
-    function buscaInfoInteresseAprender($id){
+    function buscaInfoUsuario($id){
         $con=abrirConexao();
-        $result=mysqli_query($con,"SELECT u.*, uc.* FROM usuario u, usuario_conteudo uc, conteudo c WHERE u.id=$id");
+        $result=mysqli_query($con,"SELECT u.* FROM usuario u WHERE u.id=$id");
         if(mysqli_num_rows($result)>0){
             $dados= mysqli_fetch_array($result);
             return $dados;
+        }else{
+            return NULL;
+        }
+    }
+    
+    function buscaQuerEnsinar($id){
+        $con= abrirConexao();
+        $result= mysqli_query($con, "SELECT c.* FROM usuario_conteudo uc, conteudo c WHERE uc.usuario_id=$id and uc.conteudo_id=c.id and uc.ensinar=1");
+        if(mysqli_num_rows($result)>0){
+            $nomes;
+            $i=0;
+            while($dados= mysqli_fetch_array($result)){
+                $nomes[$i++]=$dados["nome"];
+            }
+            return $nomes;
         }else{
             return NULL;
         }
