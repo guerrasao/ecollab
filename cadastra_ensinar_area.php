@@ -4,6 +4,7 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/ecollab/cabecalho/';
     $file = $path . 'cabecalho_usuario_logado.php';
     include_once($file);
+    //falta fazer
 ?>
 
 <form class="container col-md-9" method="post" action="negocio/cadastro_ensinar_area.php">
