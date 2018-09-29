@@ -61,14 +61,14 @@
     function buscaPorInteresseAprender($usuario){ //retorna uusários que ensinam o que se quer aprender
         $con=abrirConexao();
         $id= retornaId($usuario);
-        $result=mysqli_query($con, "SELECT uc.* FROM usuario u, usuario_conteudo uc WHERE u.usuario='$usuario' and uc.aprender=1");
+        $result=mysqli_query($con, "SELECT uc.* FROM usuario u, usuario_conteudo uc WHERE u.usuario='$usuario' and uc.usuario_id=u.id and uc.aprender=1");
         $rows=mysqli_num_rows($result);
-        $idUsuarios;
+        $idUsuarios=NULL;
         $indiceIds=0;
         if($rows>0){
            while($dados=mysqli_fetch_array($result)){ //CONTEÚDOS QUE ELE QUER APRENDER
                $idConteudo=$dados["conteudo_id"];
-               $result2= mysqli_query($con, "SELECT uc.usuario_id FROM usuario_conteudo uc WHERE uc.ensinar=1 and uc.conteudo_id=$idConteudo and uc.usuario_id!=$id");
+               $result2= mysqli_query($con, "SELECT uc.usuario_id FROM usuario_conteudo uc WHERE uc.ensinar=1 and uc.conteudo_id=$idConteudo and uc.usuario_id <> $id");
                $quantidadeDeIds= mysqli_num_rows($result2);
                if($quantidadeDeIds>0){
                    while($ids=mysqli_fetch_array($result2)){
@@ -76,8 +76,14 @@
                     }
                 }
            }
-           return $idUsuarios; //Ids de usuários para aparecer na lista
-           
+           if($idUsuarios!=NULL){
+               return array_unique($idUsuarios); //Ids de usuários para aparecer na lista
+           }else{
+               return NULL;
+           }
+          
+        }else{
+            return NULL;
         }
     }
     
