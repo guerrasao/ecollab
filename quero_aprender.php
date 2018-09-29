@@ -7,7 +7,7 @@
 ?>
 <section class="container p-3">
     <div class="form-group">
-        <a class="btn btn-primary col-md-12 p-3 ml-1 mt-4 mb-4" href="cadastro_aprender_area.php">Cadastrar Interesse</a>
+        <a class="btn btn-primary col-md-12 p-3 ml-1 mt-4 mb-4" href="cadastra_aprender_area.php">Cadastrar Interesse</a>
     </div>
     <form class="form-row pb-4 align-content-md-between ml-1" action="" method="post">
         <input type="text" class="form-control col-md-9" id="pesquisa" name="pesquisa" placeholder="Interesse">
@@ -26,9 +26,10 @@
             $ensinar= buscaQuerEnsinar($dados["id"]);
             $aprender= buscaQuerAprender($dados["id"]);
 ?>
-    <div class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4">
+    <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/demonstrar_interesse.php">
         <div class="col-md-1">
-            <img src="..." class="img-fluid" alt="Foto do usuário">
+            <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
+            <input type="hidden" name="idEnsina" value="<?php echo $dados["id"]; ?>">
         </div>
         <div class="col-md-2">
             <p><?php echo $dados["nome"]; ?></p>
@@ -46,14 +47,14 @@
             //html - nome;
             if($ensinar!=NULL){
                 foreach ($ensinar as $ensinar['nome'] => $value) {
-                    echo "<td>".htmlspecialchars($value)."</td>";
+                    echo "<tr><td>".$value."</td></tr>";
                 }
             }else{
-                echo "<td>Não quer ensinar nada.</td>";
+                echo "<tr><td>Não quer ensinar nada.</td></tr>";
             }
             
 ?>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -65,25 +66,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    
 <?php
             if($aprender!=NULL){
                 foreach($aprender as $aprender['nome'] => $value) {
-                    echo "<td>".$value."</td>";
+                    echo "<tr><td>".$value."</td></tr>";
                     //html - conteudo que quer aprender;
                 }
             }else{
-                echo "<td>Não quer aprender nada.</td>";
+                echo "<tr><td>Não quer aprender nada.</td></tr>";
             }
 ?>
-                    </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-md-3">
-            <a class="btn btn-primary col-md-11 " href="demonstrar_interesse.php">Demonstrar Interesse</a>
+            <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Demonstrar Interesse</button>
         </div>
-    </div>
+    </form>
 <?php
                         
         }
