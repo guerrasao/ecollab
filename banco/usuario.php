@@ -1,5 +1,5 @@
 <?php
-    include_once 'usuario.php';
+    include_once 'conexao.php';
     function login($usuario, $senha){
         $con= abrirConexao();
         $result= mysqli_query($con,"SELECT senha FROM usuario WHERE usuario='$usuario'");
@@ -29,7 +29,7 @@
             }
         }else{
             mysqli_query($con,"INSERT INTO usuario(nome, sobrenome, dtNasc, grauInstrucao, cidade, email, foto, usuario, senha, pontuacao) 
-                VALUES ('$nome', '$sobrenome', '$dtNasc', '$grauInstrucao', '$cidade', '$email', '$foto', '$usuario', '$senha', '$pontuacao')");
+                VALUES ('$nome', '$sobrenome', '$dtNasc', '$grauInstrucao', '$cidade', '$email', '$foto', '$usuario', '$senha', $pontuacao)");
             return 0; //deu certo
         }
     }
