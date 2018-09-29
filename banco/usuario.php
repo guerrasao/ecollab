@@ -46,6 +46,7 @@
     }
     
     function retornaId($usuario){
+        $con= abrirConexao();
         $result= mysqli_query($con, "SELECT id FROM usuario WHERE usuario='$usuario'");
         $dados= mysqli_fetch_array($result);
         $idUsuario=$dados["id"];
@@ -199,7 +200,7 @@
     
     function buscaNomeNotificacao($id){
         $con=abrirConexao();
-        $result= mysqli_query($con, "SELECT u.nome FROM usuario u, notificacao_ensino ne WHERE ne.id=$id and ne.usuario_id=u.id");
+        $result= mysqli_query($con, "SELECT u.nome FROM usuario u, notificacao_ensino ne WHERE ne.id=$id and ne.usuario_id_aprende=u.id");
         if(mysqli_num_rows($result)>0){
             $dados=mysqli_fetch_array($result);      
             $nome=$dados["nome"];
