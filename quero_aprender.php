@@ -29,8 +29,8 @@
             $aprender= buscaQuerAprender($dados["id"]);
 ?>
     <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/demonstrar_interesse.php">
-        <div class="col-md-1">
-            <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
+        <div class="col-md-2">
+            <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-thumbnail" alt="Foto do usuário">
             <input type="hidden" name="idEnsina" value="<?php echo $dados["id"]; ?>">
         </div>
         <div class="col-md-2">
@@ -88,7 +88,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4"><?php echo $jaDemonstrou?></button>
         </div>
     </form>
