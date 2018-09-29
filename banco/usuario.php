@@ -139,9 +139,9 @@
         return $result;
     }
 
-    function buscaConteudos(){
+    function buscaConteudos($idCategoria){
         $con=abrirConexao();
-        $result=mysqli_query($con,"SELECT * FROM conteudo WHERE categoria_id=$id");
+        $result=mysqli_query($con,"SELECT * FROM conteudo WHERE categoria_id=$idCategoria");
         if(mysqli_num_rows($result)>0){
             return $result;
         }else{
