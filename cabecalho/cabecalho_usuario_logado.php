@@ -30,7 +30,7 @@
             <div id="links" class="collapse navbar-collapse justify-content-end">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a href="index_autenticado.php" class="nav-link" data-scroll> Início </a>
+                  <a href="inicio.php" class="nav-link" data-scroll> Início </a>
                 </li>
                 <li class="nav-item">
                   <a href="minha_conta.php" class="nav-link"  data-scroll> Minha conta </a>
@@ -51,7 +51,7 @@
                   <a href="notificacoes.php" class="nav-link"  data-scroll> Meus contatos </a>
                 </li>
                 <li class="nav-item">
-                  <a href="sair.php" class="nav-link"  data-scroll> Sair </a>
+                    <a href="../negocio/sair.php" class="nav-link"  data-scroll> Sair </a>
                 </li>
               </ul>
             </div>      
