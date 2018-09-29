@@ -136,8 +136,7 @@
     function buscaCategorias(){
         $con=abrirConexao();
         $result=mysqli_query($con,"SELECT * FROM categoria");
-        $dados= mysqli_fetch_array($result);
-        return $dados;
+        return $result;
     }
 
     function buscaConteudos(){
