@@ -33,7 +33,7 @@
             <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-thumbnail" alt="Foto do usuário">
             <input type="hidden" name="idEnsina" value="<?php echo $dados["id"]; ?>">
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
             <p><?php echo $dados["nome"]; ?></p>
         </div>    
         <div class="col-md-3">
