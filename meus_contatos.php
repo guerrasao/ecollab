@@ -22,11 +22,6 @@
     if($contatos!=NULL){
         while ($dados= mysqli_fetch_array($contatos)){
             $idContato=$dados["id"];
-            $dados=buscaNomeNotificacao($id);
-            $id; //id da notificacão guardar infomação
-            $nome=$dados["nome"];
-            
-            //echo "ID NOTIFICAÇÃO: $id | NOME DO CONTATO: $nome | ID CONTATO: $idContato <br><br>";
             $perfil= buscaInfoUsuario($idContato);
             $ensinar= buscaQuerEnsinar($idContato);
             $aprender= buscaQuerAprender($idContato);
@@ -34,7 +29,7 @@
     <form class="container-fluid row jumbotron m-1 mt-3 align-items-center pb-2 pt-4 pr-4" method="post" action="negocio/aceita_collab.php">
         <input type="hidden" name="idUsuarioSolicita" value="<?php echo $idContato ?>">
         <div class="col-md-1">
-            <img src="images_profile/<?php echo $dados["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
+            <img src="images_profile/<?php echo $perfil["foto"]; ?>" class="img-fluid" alt="Foto do usuário">
         </div>
         <div class="col-md-2">
             <p><?php echo $perfil["nome"]; ?></p>
