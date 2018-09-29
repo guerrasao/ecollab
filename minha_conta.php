@@ -48,28 +48,28 @@ if($dados!=NULL){
             </div>
             <div class="form-group col-md-6">
                 <select id="genero" name="genero" class="form-control">
-                    <option value="Masculino" selected>Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                    <option value="Outro">Outro</option>
+                    <option value="Masculino" <?php if($dados["genero"]==="Masculino"){ echo "selected";}?>>Masculino</option>
+                    <option value="Feminino" <?php if($dados["genero"]==="Feminino"){ echo "selected";}?>>Feminino</option>
+                    <option value="Outro" <?php if($dados["genero"]==="Outro"){ echo "selected";}?>>Outro</option>
                 </select>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade">
+                    <input type="text" class="form-control" id="cidade" name="cidade" value="<?php echo $dados["cidade"] ?>" placeholder="Cidade">
                 </div>
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
+                    <input type="text" class="form-control" id="usuario" value="<?php echo $dados["usuario"] ?>" name="usuario" placeholder="Usuario">
                 </div>
                 <div class="form-group ">
-                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+                    <input type="password" class="form-control" id="senha" value="<?php echo $dados["senha"] ?>" name="senha" placeholder="Senha">
                 </div>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Cadastrar</button>
+                <button type="submit" name="submit" class="btn btn-primary pr-4 pl-4">Alterar</button>
                 <button type="reset" name="reset" class="btn btn-primary pr-5 pl-5">Limpar</button>
             </div>
             <div class="form-group col-md-6">
