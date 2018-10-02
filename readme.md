@@ -1,5 +1,12 @@
 # Projeto e-collab
 
+## Versão
+
+```
+0.1
+```
+O sistema está em fase beta de desenvolvimento. Nenhuma versão estável publicada.
+
 ## Descrição
 
 O objetivo principal do sistema é conectar pessoas que possuem interesses de aprender e ensinar.
